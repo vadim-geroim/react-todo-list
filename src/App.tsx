@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import TodoList from "./todolist/TodoList";
 
-let task1 = [
+let tasks1 = [
   {
     id: 1,
     name: "HTML&CSS",
@@ -20,7 +20,7 @@ let task1 = [
   },
 ];
 
-let task2 = [
+let tasks2 = [
   {
     id: 4,
     name: "All about You",
@@ -41,8 +41,8 @@ let task2 = [
 function App() {
   return (
     <div className="App">
-      <TodoList title="What to Learn" task={task1} />
-      <TodoList title="Songs" task={task2} />
+      <TodoList title="What to Learn" tasks={tasks1} />
+      <TodoList title="Songs" tasks={tasks2} />
     </div>
   );
 }

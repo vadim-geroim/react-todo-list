@@ -9,7 +9,7 @@ type TaskType = {
 
 type PropsType = {
   title: String;
-  task: Array<TaskType>;
+  tasks: Array<TaskType>;
 };
 
 function TodoList(props: PropsType) {
@@ -21,18 +21,12 @@ function TodoList(props: PropsType) {
         <button>+</button>
       </div>
       <ul>
-        <li>
-          <input type="checkbox" checked={props.task[0].isDone} />{" "}
-          <span>{props.task[0].name}</span>
-        </li>
-        <li>
-          <input type="checkbox" checked={props.task[1].isDone} />{" "}
-          <span>{props.task[1].name}</span>
-        </li>
-        <li>
-          <input type="checkbox" checked={props.task[2].isDone} />{" "}
-          <span>{props.task[2].name}</span>
-        </li>
+        {props.tasks.map((task) => (
+          <li>
+            <input type="checkbox" checked={task.isDone} />{" "}
+            <span>{task.name}</span>
+          </li>
+        ))}
       </ul>
       <div>
         <button>All</button>
