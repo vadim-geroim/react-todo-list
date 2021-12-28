@@ -2,39 +2,40 @@ import { type } from "os";
 import React, { useState } from "react";
 import "./App.css";
 import TodoList from "./todolist/TodoList";
+import { v1 } from "uuid";
 
 export type FilterValuesType = "all" | "active" | "completed";
 
 function App() {
   let [tasks, setTasks] = useState([
     {
-      id: 1,
+      id: v1(),
       name: "HTML&CSS",
       isDone: true,
     },
     {
-      id: 2,
+      id: v1(),
       name: "JS",
       isDone: true,
     },
     {
-      id: 3,
+      id: v1(),
       name: "React",
       isDone: false,
     },
     {
-      id: 4,
+      id: v1(),
       name: "REST API",
       isDone: false,
     },
     {
-      id: 5,
+      id: v1(),
       name: "GraphQL",
       isDone: false,
     },
   ]);
 
-  function removeTask(id: number) {
+  function removeTask(id: string) {
     const filteredTasks = tasks.filter((task) => task.id !== id);
     setTasks(filteredTasks);
   }

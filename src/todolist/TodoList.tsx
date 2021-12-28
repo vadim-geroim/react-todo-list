@@ -3,7 +3,7 @@ import { getAllJSDocTagsOfKind } from "typescript";
 import { FilterValuesType } from "../App";
 
 type TaskType = {
-  id: number;
+  id: string;
   name: string;
   isDone: boolean;
 };
@@ -11,7 +11,7 @@ type TaskType = {
 type PropsType = {
   title: String;
   tasks: Array<TaskType>;
-  removeTask: (id: number) => void;
+  removeTask: (id: string) => void;
   changeFilter: (filter: FilterValuesType) => void;
 };
 
