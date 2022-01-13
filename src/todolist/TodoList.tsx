@@ -25,6 +25,10 @@ function TodoList(props: PropsType) {
   let [newTaskTitle, setNewTitle] = useState("");
 
   const addNewTaskHandler = () => {
+    if (newTaskTitle.trim() === "") {
+      return;
+    }
+
     props.addTask(newTaskTitle);
     setNewTitle("");
   };
